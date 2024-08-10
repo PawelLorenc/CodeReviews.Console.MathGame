@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MathGame
+namespace MathGame.enums
 {
     enum Operations
     {
         Addition,
         Subtraction,
         Multiplication,
-        Division
+        Division,
+        Random
     }
 }

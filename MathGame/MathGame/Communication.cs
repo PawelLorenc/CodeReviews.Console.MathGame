@@ -1,5 +1,6 @@
 ﻿using System.Numerics;
 using System.Threading.Channels;
+using MathGame.enums;
 
 namespace MathGame;
 
@@ -21,18 +22,19 @@ internal static class Communication
         Console.WriteLine("[2] Subtraction");
         Console.WriteLine("[3] Multiplication");
         Console.WriteLine("[4] Division");
+        Console.WriteLine("[5] Random");
         bool isInputValid = false;
         while (!isInputValid)
         {
             int intInput = Utils.ValidateInputIntiger(Console.ReadLine());
-            if (intInput > 0 && intInput < 5)
+            if (intInput > 0 && intInput < 6)
             {
                 operationInt = intInput - 1;
                 isInputValid = true;
             }
             else
             {
-                Console.WriteLine("Provide number from 1-4");
+                Console.WriteLine("Provide number from 1-5");
             }
         }
         return (Operations)operationInt;
@@ -69,7 +71,7 @@ internal static class Communication
                 operationSign = "*";
                 break;
         }
-        Console.WriteLine("What is the resulf of: " + firstNum + " " + operationSign + " " + secondNum);
+        Console.WriteLine("What is the result of: " + firstNum + " " + operationSign + " " + secondNum);
         return Utils.ValidateInputIntiger(Console.ReadLine());
     }
 
@@ -80,7 +82,7 @@ internal static class Communication
     internal static bool ShouldDisplayResults()
     {
         Console.WriteLine("[1] If you want to display resutls");
-        Console.WriteLine("Type anything else if you don'w want to display resutls");
+        Console.WriteLine("Type anything else if you don't want to display resutls");
         return Console.ReadLine() == "1";
 
     }
@@ -95,5 +97,30 @@ internal static class Communication
     {
         Console.WriteLine("If you want to quit the game press 1. If you want to keep playing, press enter.");
         return Console.ReadLine() != "1";
+    }
+
+    internal static DifficultyLevels ChooseDifficulty()
+    {
+        int operationInt = 0;
+        Console.WriteLine("Choose game difficulty level: ");
+        Console.WriteLine("[1] Easy ");
+        Console.WriteLine("[2] Medium");
+        Console.WriteLine("[3] Hard");
+
+        bool isInputValid = false;
+        while (!isInputValid)
+        {
+            int intInput = Utils.ValidateInputIntiger(Console.ReadLine());
+            if (intInput > 0 && intInput < 4)
+            {
+                operationInt = intInput - 1;
+                isInputValid = true;
+            }
+            else
+            {
+                Console.WriteLine("Provide number from 1-4");
+            }
+        }
+        return (DifficultyLevels)operationInt;
     }
 }

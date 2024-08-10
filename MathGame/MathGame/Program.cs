@@ -1,4 +1,7 @@
-﻿namespace MathGame
+﻿using MathGame.enums;
+using System.Diagnostics;
+
+namespace MathGame
 {
     internal class Program
     {
@@ -20,16 +23,33 @@
                         Console.Clear();
                     }
                 }
+                DifficultyLevels difficultyLevel = Communication.ChooseDifficulty();
                 Operations gameMode = Communication.ChooseGameModes();
                 int amountOfRounds = Communication.AskAmountOfRounds();
                 Console.Clear();
+                bool isRandomMode = gameMode == Operations.Random;
+                Stopwatch stopwatch = new Stopwatch();
+                stopwatch.Start();
                 for (int i = 0; i < amountOfRounds; i++)
                 {
-                    GameLogic game = new(gameMode);
+                    if (isRandomMode)
+                    {
+                        gameMode = GameLogic.DrawRandomGame();
+                    }
+                    GameLogic game = new(gameMode, difficultyLevel);
                     int answer = Communication.AskMathQuestion(game.FirstNumber, game.SecondNumber, gameMode);
-                    validator.ValidateWinner(game, answer, amountOfRounds, name);
+                    validator.ValidateWinner(game, answer, amountOfRounds, name, difficultyLevel);
+                    if (i == amountOfRounds - 1)
+                    {
+                        stopwatch.Stop();
+                    }
                     Console.ReadKey();
                     Console.Clear();
+                    if(i == amountOfRounds - 1)
+                    {
+                        TimeSpan timeSpan = stopwatch.Elapsed;
+                        Console.WriteLine("It took you " + timeSpan.Seconds + " s. to solve the math challange!");
+                    }
                 }
                 keepPlaying = Communication.ShouldQuitTheGame();
                 Console.Clear();

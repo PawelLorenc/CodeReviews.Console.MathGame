@@ -1,4 +1,6 @@
-﻿namespace MathGame;
+﻿using MathGame.enums;
+
+namespace MathGame;
 
 internal class WinnerValidator
 {
@@ -6,7 +8,7 @@ internal class WinnerValidator
     private int roundsPlayed = 0;
     private int winCounter = 0;
 
-    internal void ValidateWinner(GameLogic game, int input, int amountOfRounds, string name)
+    internal void ValidateWinner(GameLogic game, int input, int amountOfRounds, string name, DifficultyLevels difficulty)
     {
         if(game.Answer == input)
         {
@@ -22,7 +24,7 @@ internal class WinnerValidator
         {
             Communication.SummariseGame(winCounter, roundsPlayed);
 
-            resultsList.Add(DateTime.Now.ToString() + " " + name + " " + "Your result: " + winCounter + " out of " + amountOfRounds + " rounds");
+            resultsList.Add(DateTime.Now.ToString() + " " + name + " " + "Your result: " + winCounter + " out of " + amountOfRounds + " rounds" + " Difficulty level: " +  difficulty);
         }
     }
 }
