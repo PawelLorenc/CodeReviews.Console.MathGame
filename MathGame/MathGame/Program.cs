@@ -48,7 +48,7 @@ namespace MathGame
                     if(i == amountOfRounds - 1)
                     {
                         TimeSpan timeSpan = stopwatch.Elapsed;
-                        Console.WriteLine("It took you " + timeSpan.Seconds + " s. to solve the math challange!");
+                        Console.WriteLine("It took you " + timeSpan.Seconds + "s. to solve the math challenge!");
                     }
                 }
                 keepPlaying = Communication.ShouldQuitTheGame();

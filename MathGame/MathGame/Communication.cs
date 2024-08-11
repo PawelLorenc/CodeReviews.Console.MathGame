@@ -46,7 +46,7 @@ internal static class Communication
     }
     internal static void PrintCorrectAnswer()
     {
-        Console.WriteLine("Correct naswer!");
+        Console.WriteLine("Correct answer!");
     }
     internal static void PrintYouWereWrong(int correctAnswer)
     {
@@ -75,14 +75,14 @@ internal static class Communication
         return Utils.ValidateInputIntiger(Console.ReadLine());
     }
 
-    internal static void SummariseGame(int numberOfWins, int numberOfRounds)
+    internal static void SummarizeGame(int numberOfWins, int numberOfRounds)
     {
         Console.WriteLine("You won " + numberOfWins + " out of " + numberOfRounds + " rounds");
     }
     internal static bool ShouldDisplayResults()
     {
-        Console.WriteLine("[1] If you want to display resutls");
-        Console.WriteLine("Type anything else if you don't want to display resutls");
+        Console.WriteLine("[1] If you want to display results");
+        Console.WriteLine("Type anything else if you don't want to display results");
         return Console.ReadLine() == "1";
 
     }

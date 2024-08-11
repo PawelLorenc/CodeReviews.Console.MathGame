@@ -22,7 +22,7 @@ internal class WinnerValidator
         roundsPlayed++;
         if(amountOfRounds == roundsPlayed)
         {
-            Communication.SummariseGame(winCounter, roundsPlayed);
+            Communication.SummarizeGame(winCounter, roundsPlayed);
 
             resultsList.Add(DateTime.Now.ToString() + " " + name + " " + "Your result: " + winCounter + " out of " + amountOfRounds + " rounds" + " Difficulty level: " +  difficulty);
         }
