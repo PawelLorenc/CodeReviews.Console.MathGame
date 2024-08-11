@@ -4,11 +4,11 @@ namespace MathGame;
 
 internal class GameLogic
 {
-    public int FirstNumber { get; private set; }
-    public int SecondNumber { get; private set; }
-    public int Answer { get; private set; }
+    internal int FirstNumber { get; private set; }
+    internal int SecondNumber { get; private set; }
+    internal int Answer { get; private set; }
 
-    public GameLogic(Operations operation, DifficultyLevels difficulty) 
+    internal GameLogic(Operations operation, DifficultyLevels difficulty) 
     {
         Random rnd = new Random();
         int difficultyInt = (int)difficulty + 1;
@@ -40,7 +40,7 @@ internal class GameLogic
             }
         }
     }
-    public static Operations DrawRandomGame()
+    internal static Operations DrawRandomGame()
     {
         Random rnd = new Random();
         int random = rnd.Next(0, 3);

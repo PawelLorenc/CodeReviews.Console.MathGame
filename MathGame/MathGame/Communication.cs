@@ -6,7 +6,7 @@ namespace MathGame;
 
 internal static class Communication
 {
-    public static string Name { get; private set; }
+    internal static string Name { get; private set; }
 
     internal static string ProvideYourName()
     {

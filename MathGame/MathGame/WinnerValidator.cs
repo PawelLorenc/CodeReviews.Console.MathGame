@@ -4,7 +4,7 @@ namespace MathGame;
 
 internal class WinnerValidator
 {
-    public static List<string> resultsList { get; private set; } = new();
+    internal static List<string> resultsList { get; private set; } = new();
     private int roundsPlayed = 0;
     private int winCounter = 0;
 
