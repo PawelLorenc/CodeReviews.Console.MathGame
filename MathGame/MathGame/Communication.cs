@@ -1,6 +1,4 @@
-﻿using System.Numerics;
-using System.Threading.Channels;
-using MathGame.enums;
+﻿using MathGame.enums;
 
 namespace MathGame;
 
