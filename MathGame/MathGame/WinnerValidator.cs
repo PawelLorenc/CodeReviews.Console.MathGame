@@ -4,9 +4,9 @@ namespace MathGame;
 
 internal class WinnerValidator
 {
-    internal static List<string> resultsList { get; private set; } = new();
-    private int roundsPlayed = 0;
-    private int winCounter = 0;
+    internal static List<string> ResultsList { get; private set; } = new();
+    private int roundsPlayed;
+    private int winCounter;
 
     internal void ValidateWinner(GameLogic game, int input, int amountOfRounds, string name, DifficultyLevels difficulty)
     {
@@ -24,7 +24,7 @@ internal class WinnerValidator
         {
             Communication.SummarizeGame(winCounter, roundsPlayed);
 
-            resultsList.Add(DateTime.Now.ToString() + " " + name + " " + "Your result: " + winCounter + " out of " + amountOfRounds + " rounds" + " Difficulty level: " +  difficulty);
+            ResultsList.Add(DateTime.Now.ToString() + " " + name + " " + "Your result: " + winCounter + " out of " + amountOfRounds + " rounds" + " Difficulty level: " +  difficulty);
         }
     }
 }

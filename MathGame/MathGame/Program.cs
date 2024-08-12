@@ -13,12 +13,12 @@ internal class Program
         while (keepPlaying)
         {
             WinnerValidator validator = new WinnerValidator();
-            if(WinnerValidator.resultsList.Count > 0) 
+            if(WinnerValidator.ResultsList.Count > 0) 
             { 
                 if(Communication.ShouldDisplayResults())
                 {
                     Console.Clear();
-                    Communication.PrintResultsFromList(WinnerValidator.resultsList);
+                    Communication.PrintResultsFromList(WinnerValidator.ResultsList);
                     Console.ReadKey();
                     Console.Clear();
                 }
